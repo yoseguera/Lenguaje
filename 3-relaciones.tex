@@ -1,0 +1,288 @@
+\chapter{Relaciones y aplicaciones entre conjuntos}
+
+\section{Propiedades básicas}
+
+\subsection{Reflexiva}
+
+$R$ es reflexiva $\Leftrightarrow (x,x) \in R \Leftrightarrow \forall x \in U, xRx$
+
+\subsection{Simétrica}
+
+$R$ es simétrica $\Leftrightarrow R^{-1} \subset R \Leftrightarrow \forall x,y \in U, xRy \Rightarrow yRx$.
+
+\subsection{Antisimétrica}
+
+$R$ es antisimétrica $\Leftrightarrow R^{-1} \cap R = \{(x,x)|x \in U\} \Leftrightarrow \forall x,y \in U, xRy \wedge yRx \Rightarrow x=y$.
+
+\subsection{Transitiva}
+
+$R$ es transitiva $\Leftrightarrow R \circ R = R \Leftrightarrow \forall x,y,z \in U, xRy \wedge yRz \Rightarrow xRz$.
+
+\section{Relación de equivalencia}
+
+Una relación $\mathcal{E}$ en el conjunto $U$ se denomina \textbf{relación de equivalencia} si posee las siguientes características:
+\begin{enumerate}
+\item Reflexiva.
+\item Simétrica.
+\item Transitiva.
+\end{enumerate}
+
+\subsection{Clase de equivalencia}
+
+Dada una relación de equivalencia $\mathcal{E}$ en el conjunto $U$, se denomina \textbf{clase de equivalencia} del elemento $x \in U$ al conjunto imagen de $x$:
+\[
+x\mathcal{E} = [x] = \{y \in U | x \mathcal{E} y\}
+\]
+
+Tiene las siguientes propiedades:
+\begin{itemize}
+\item Es independiente del representate elegido $x\mathcal{E}y \Rightarrow [x]=[y]$.
+\item Cualquier $y \in [x]$ es denominado \textbf{representante de la clase} $[x]$.
+\item Son disjuntos: $x \not \mathcal{E}y \Rightarrow [x] \cap [y] = \emptyset$
+\end{itemize}
+
+\subsection{Partición de un conjunto}
+
+Una \textbf{partición de un conjunto} $U$ es una familia $P$ de subconjuntos no vacíos de $U$ disjuntos dos a dos y cuya unión es el conjunto $U$. Es decir:
+\begin{enumerate}
+\item $\forall A,B \in P,A=B \vee A \cap B = \emptyset$.
+\item $\bigcup_{A \in P} A = U$.
+\end{enumerate}
+
+\subsection{Conjunto cociente}
+
+Dada una relación de equivalencia $\mathcal{E}$ en el conjunto $U$, se denomina \textbf{conjunto cociente}, y se denota por $U/\mathcal{E}$, al conjunto de todas las clases que general la relación de equivalencia $\mathcal{E}$.
+
+$U/\mathcal{E}$ es una partición del conjunto $U$.
+
+\section{Relación de orden}
+
+Una relación $\mathcal{R}$ en el conjunto $U$ se denomina \textbf{relación de orden} is posee las propiedades:
+\begin{enumerate}
+\item Reflexiva.
+\item Antisimétrica.
+\item Transitiva.
+\end{enumerate}
+
+$\mathcal{R}$ es una \textbf{relación de orden total} si
+\[
+\mathcal{R}^{-1} \cup \mathcal{R} = U \times U \Leftrightarrow \forall x,y \in U, x\mathcal{R}y \vee y\mathcal{R}x
+\]
+En cualquier otro caso es una \textbf{relación de orden parcial}.
+
+\subsection{Intervalos en un conjunto ordenado}
+
+Dados un conjunto ordenado $(U,\preceq)$, y $a,b \in U$ tales que $a \preccurlyeq b$, se denominan intervalos a cada uno de los siguientes conjuntos:
+\begin{description}
+\item[Intervalo abierto] $(a,b) = \{x \in U| a \prec x \prec y\}$
+\item[Intervalo cerrado] $[a,b] = \{x \in U| a \preceq x \preceq y\}$
+\item[Intervalo semiabiertos] Pueden ser:
+\begin{itemize}
+\item $(a,b] = \{x \in U| a \prec x \preceq y\}$
+\item $[a,b) = \{x \in U| a \preceq x \prec y\}$
+\end{itemize}
+\end{description}
+
+\subsection{Intervalos iniciales y finales}
+
+Dado un conjunto ordenado $(U,\preceq)$, los siguientes conjuntos también se denominan intervalos:
+\begin{description}
+\item[Intervalo inicial abierto] $(\leftarrow,a) = \{x \in U| x \prec a\}$.
+\item[Intervalo final abierto] $(a,\leftarrow) = \{x \in U| a \prec x\}$.
+\item[Intervalo inicial cerrado] $(\leftarrow,a] = \{x \in U| x \preceq a\}$.
+\item[Intervalo final cerrado] $[a,\leftarrow) = \{x \in U| a \preceq x\}$.
+\end{description}
+
+\subsection{Orden lexicográfico en $\mathbb{R}^2$}
+
+\[
+(a,b) \leq_L (c,d) \Leftrightarrow (a < c) \vee (a = c \wedge (b \leq d))
+\]
+
+\subsection{Orden producto en $\mathbb{R}^2$}
+
+\[
+(a,b) \leq_P (c,d) \Leftrightarrow a \leq c \wedge b \leq d
+\]
+
+\subsection{Conjunto acotado}
+
+Dados un conjunto ordenado $(U,\preceq)$ y un subconjunto $A \subset U$, se denomina:
+\begin{description}
+\item[Cota superior] Cualquier elemento $u \in U$ que cumple que $\forall  x \in A, x \preceq u$.
+\item[Cota inferior] Cualquier elemento $u \in U$ que cumple que $\forall  x \in A, u \preceq x$.
+\item[Conjunto $A$ acotado superiormente] Si existe una cota superior de $A$.
+\item[Conjunto $A$ acotado inferiormente] Si existe una cota inferior de $A$.
+\item[Conjunto $A$ acotado] Si existe tanto cota superior como inferior de $A$.
+\end{description}
+
+\subsection{Máximo, mínimo, supremo e ínfimo}
+\begin{description}
+\item[Máximo del conjunto $A$] $\max(A)= m \in A$ tal que $\forall x \in A, x \preceq m$.
+\item[Mínimo del conjunto $A$] $\min(A)= m \in A$ tal que $\forall x \in A, m \preceq x$.
+\item[Supremo del conjunto $A$] Cota superior $\sup(A)=s \in U$ tal que $s \preceq u$ para toda cota superior $u$ de $A$.
+\item[Ínfimo del conjunto $A$] Cota inferior $\inf(A)=i \in U$ tal que $u \preceq i$ para toda cota inferior $u$ de $A$.
+\end{description}
+
+El ínfimo es el máximo de las cotas inferiores. El supremo es el mínimo de las cotas superiores.
+
+Si existe máximo entonces hay supremo y son iguales. Si existe mínimo entonces hay ínfimo y son iguales.
+
+Dados un conjunto ordenado $(U,\preceq)$ y un subconjunto $A \subset U$, se tiene:
+\begin{itemize}
+\item Si existe máximo, mínimo, del conjunto $A$, entonces éste es único.
+\item Si existe supremo, ínfimo, del conjunto $A$, entonces éste es único.
+\item Si existe supremo $s$ del conjunto $A$ y $s \in A$, entonces $s$ es el máximo de $A$.
+\item Si existe ínfimo $i$ del conjunto $A$ y $i \in A$, entonces $i$ es el mínimo de $A$.
+\end{itemize}
+
+\subsection{Propiedad del buen orden}
+
+Se dice que un conjunto $(U,\preceq)$ es un conjunto \textbf{bien ordenado}, o que la relación $\preceq$ es una buena ordenación, si cualquier subconjunto no vacío posee mínimo. El elemento mínimo de cada subconjunto $A$ también se denomina primer elemento.
+
+\subsection{Propiedad del supremo}
+
+Se dice que un conjunto $(U,\preceq)$ cumple la propiedad del supremo si y sólo si cualquier subconjunto no vacío $A$ acotado superiormente posee supremo.
+
+\subsection{Maximal y minimal}
+
+Dados un conjunto ordenado $(U,\preceq)$ y un subconjunto $A \subset U$ se define:
+\begin{description}
+\item[Maximal del conjunto $A$] Es un elemento $m \in A$ tal que
+\[
+\nexists x \in A, x \neq m, m \preceq x
+\] 
+\item[Minimal del conjunto $A$] Es un elemento $m \in A$ tal que
+\[
+\nexists x \in A, x \neq m, x \preceq m
+\] 
+\end{description}
+
+Si un conjunto tiene máximo (mínimo) entonces solo hay un maximal (minimal) que coincide con él.
+
+\section{Aplicaciones entre conjuntos}
+
+Una relación entre los conjuntos $A$ y $B$ se denomina \textbf{aplicación}, o \textbf{función}, entre $A$ y $B$ si y sólo si cualquier elemento del conjunto inicial $A$ esta relacionado con un único elemento del conjunto final $B$.
+
+\[
+\forall a \in A, \exists b \in B; f(a)=b; b=f(a) \wedge b'=f(a) \Rightarrow b=b'
+\]
+
+\begin{itemize}
+\item $A$ es el conjunto \textbf{inicial, original o dominio de definición} de $f$, y se denota como $Orig(f), Dom(f)$.
+\item $B$ es el conjunto \textbf{final} de $f$.
+\item $f(A)=Im(f)=\{y \in B|\exists x \in A, f(x)=y\}=\{f(x)| x \in A\}$ es el \textbf{conjunto imagen}.
+\item $f(x)$ es la imagen de $x$.
+\item $f^{-1}(y)=\{x \in A | f(x)=y\}$ se denomina \textbf{imagen inversa de $y$ por $f$}.
+\item El conjunto de aplicaciones de $A$ a $B$ se denota por $\mathcal{F}(A,B),B^A,\mathcal{F}(A)$.
+\end{itemize}
+
+Una aplicación $f$ es \textbf{constante}
+\[
+\Leftrightarrow \forall x,x' \in A, f(x)=f(x')
+\] 
+
+Una relación de equivalencia $\mathcal{E}$ sobre un conjunto $A$ define una aplicación $f$ que asigna a cada elemento su clase de equivalencia. Se denomina \textbf{proyección canónica}.
+
+La \textbf{aplicación de identidad} asigna a cada $x \in A$ el mismo valor. Se denota como $I_A,1_A,Id_A$.
+
+\subsection{Igualdad entre aplicaciones}
+
+Dos aplicaciones $f: A \longrightarrow B$ y $g: A' \longrightarrow B'$ son iguales:
+\[
+f=g \Leftrightarrow \begin{cases}
+A=A'\\
+B=B'\\
+f(x)=g(x)\ \forall x \in A
+\end{cases}
+\]
+
+\subsection{Composición de aplicaciones}
+
+Dadas las aplicaciones $f: A \longrightarrow B$ y $g: B \longrightarrow C$, se define la \textbf{composición de} f y g, o aplicación composición, a la aplicación de $A$ a $C$, que denotamos como $g \circ f$, tal que:
+\[
+(g \circ f)(x) = g(f(x)), \forall x \in A
+\]
+
+\subsection{Función característica de un conjunto}
+
+Dado un subconjunto $A \subset U$, se llama función característica de $A$, y se denota $\mathcal{X}_A$, a la función $\mathcal{X}_A: U \longrightarrow \mathbb{R}$ definida de la forma:
+\[
+\mathcal{X}_A = \begin{cases}
+1 \; x \in A \\
+0 \; x \not \in A
+\end{cases}
+\]
+
+\subsection{Aplicación sobreyectiva, sobreyección o epiyectiva}
+
+Es una aplicación tal que cualquier elemento del conjunto final está relacionado con alguno del conjunto inicial. Es decir, $f \in \mathcal{F}(A,B)$ tal que $Im(f)=B$, o lo que es lo mismo:
+\[
+\forall y \in B, \exists x \in A; f(x) = y
+\]
+
+\subsection{Aplicación inyectiva o inyección}
+
+Es una aplicación tal que no hay dos elementos del conjunto inicial que tengan la misma imagen. Es decir, $f \in \mathcal{F}(A,B)$ tal que:
+\[
+\forall x, x' \in A; f(x)=f(x') \Rightarrow x=x'
+\]
+
+O lo que es lo mismo:
+\[
+\forall x, x' \in A; x \neq x' \Rightarrow f(x) \neq f(x')
+\]
+
+\subsection{Composición de aplicaciones sobreyectivas e inyectivas}
+
+Dadas las aplicaciones $f \in \mathcal{F}(A,B)$, $g \in \mathcal{F}(B,C)$ y  $g \circ f \in \mathcal{F}(A,B)$, se tiene:
+\begin{enumerate}
+\item Si $f$ y $g$ son sobreyectivas, entonces $g \circ f$ es sobreyectiva.
+\item Si $f$ y $g$ son inyectivas, entonces $g \circ f$ es inyectiva.
+\end{enumerate}
+
+\subsection{Aplicación biyectiva o biyección}
+
+Es una aplicación que es sobreyectvia o inyectiva al mismo tiempo, es decir, tal que cada elemento del conjunto final está relacionado cono un único elemento del conjunto inicial. Es decir,  una aplicación $f \in \mathcal{F}(A,B)$ tal que:
+\[
+para\ cada\ y \in B\ existe\ un\ unico\ elemento\ x \in A\ tal\ que\ f(x)=y
+\]
+
+Una aplicación $f \in \mathcal{F}(A,B)$ es biyectiva si y sólo si existe una aplicación $g \in \mathcal{F}(B,A)$ tal que $f \circ g = I_B$ y $g \circ f = I_A$.
+
+Sean $f \in \mathcal{F}(A,B)$ y $g \in \mathcal{F}(B,C)$ aplicaciones biyectivas, entonces $g \circ f \in \mathcal{F}(A,C)$ es biyectiva, y su inversa es:
+\[
+(g \circ f)^{-1}(x)=f^{-1}(x) \circ g^{-1}(x)
+\]
+
+Sea una aplicación $f \in \mathcal{F}(A,B)$:
+\begin{enumerate}
+\item $f$ es sobreyectiva si y sólo si existe una aplicación $h \in \mathcal{F}(B,A)$ tal que $f \circ h = I_B$.
+\item $f$ es inyectiva si y sólo si existe una aplicación $g \in \mathcal{F}(A,B)$ tal que $g \circ f = I_A$.
+\end{enumerate}
+
+\section{Equipotencia de conjuntos}
+
+Dos conjuntos $A$ y $B$ se dicen equipotentes si y sólo si existe una biyección entre ellos, y se denota $A \equiv B$.
+
+\subsection{Cardinal}
+
+Se denomina:
+\begin{description}
+\item[Cardinal 0] Es la colección de todos los conjuntos equipotentes con $\emptyset$, y se representa con el símbolo del número 0.
+\item[Cardinal n] Es la colección de todos los conjuntos equipotentes con ${1,\ldots,n} \subset \mathbb{N}^*$, y se representa con el símbolo del número $n$.
+\item[Cardinal de $\mathbb{N}$ o $\mathfrak{N}_0$] Es la colección de todos los conjuntos equipotentes con $\mathbb{N}$, y se representa con el símbolo del número $\mathfrak{N}_0$.
+\item[Cardinal $\mathbb{R}$ o $\mathfrak{c}$] Es la colección de todos los conjuntos equipotentes con $\mathbb{R}$, y se representa con el símbolo del número $\mathfrak{c}$.
+\end{description}
+
+Decimos que el conjunto $A$ tiene $n$ elementos siendo $n \in \mathbb{N}^*$ si y sólo si:
+\[
+card(A)=n
+\]
+
+Se dice que un conjunto $A$ es:
+\begin{description}
+\item[Finito] Si existe $n \in \mathbb{N}$ tal que $card(A)=n$.
+\item[Infinito] Si no es un conjunto finito.
+\item[Numerable] Si existe una biyección de los números naturales al conjunto, y se indica escribiendo $card(A)=\mathfrak{N}_0$.
+\end{description}

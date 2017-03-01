@@ -1,0 +1,279 @@
+\chapter{Los números naturales y los números enteros}
+
+\section{Los números naturales}
+
+Los números naturales se definen mediante los axiomas de Peano:
+\begin{enumerate}
+ \item El elemento 0 es un número natural.
+ \item Todo elemento natural $n$ tiene un único elemento sucesor que tambien es
+un número natural.
+ \item 0 no es el sucesor de ningún número natural.
+ \item Dos números naturales cuyos sucesores sean iguales, son iguales.
+ \item Si un conjunto de número naturales incluye al 0 y a todos los sucesores
+de cada uno de los elementos, incluye a todos los números naturales.
+\end{enumerate}
+
+Se denotan de la siguiente manera, teniendo en cuenta si incluyen al 0 o no:
+\begin{align*}
+ \mathbb{N}=\{0,1,2,3,\ldots\} \\
+ \mathbb{N}*=\{1,2,3,\ldots\}
+\end{align*}
+
+En resumen:
+\begin{itemize}
+  \item Todo número natural $n\neq0$ es sucesor de algún número natural.
+  \item Para todo $n \in \mathbb{N}, n \neq s(n)$.
+\end{itemize}
+
+\subsection{Suma}
+
+Se define mediante recursión sobre $n$ la suma $m+n$ mediante:
+\begin{enumerate}
+  \item $m+0=n$ para todo $m \in \mathbb{N}$.
+  \item $m+s(n)=s(m+n)$ para todo $m,n \in \mathbb{N}$.
+\end{enumerate}
+
+La suma de números naturales es una operación interna en $\mathbb{N}$ que
+satisface, cualesquiera que sean $m,n,p \in \mathbb{N}$, las siguientes
+propiedades:
+
+\begin{enumerate}
+  \item Existencia de elemento neutro: $m+0=0+m=m$.
+  \item Asociativa: $(m+n)+p=m+(n+p)$.
+  \item Conmutativa: $m+n=n+m$.
+  \item Cancelativa: $m+p=n+p \Rightarrow m=n$.
+\end{enumerate}
+
+\subsection{Producto}
+
+Se define por recurrencia sobre $n$ el producto, que designamos por $m \cdot n$ o $mn$, de los numeros naturales $m$ y $n$ mediante:
+\begin{enumerate}
+	\item $m \cdot 0 = 0$ para todo $n \in \mathbb{N}$.
+	\item $m \cdot s(n) = m \cdot n + m$ para todo $m, n \in \mathbb{N}$. 
+\end{enumerate}
+
+El producto de números naturales es una operación interna en $\mathbb{N}$ que satisface, cualesquiera que sean $m,n,p \in \mathbb{N}$, las siguientes propiedades:
+\begin{enumerate}
+	\item Existencia de elemento neutro: $m \cdot 1 = 1 \cdot m = m$.
+	\item Distributiva: $m(n + p) = mn + mp$ y $(n+p)m = nm + pm$.
+	\item Asociativa: $(m \cdot n) \cdot p = m \cdot (n \cdot p)$.
+	\item Conmutativa: $m \cdot n = n \cdot m$.
+	\item Cancelativa: $mp=np \wedge p \neq 0 = \Rightarrow m=n$.
+\end{enumerate}
+
+Se define la potencia n-ésima de $a$, $a^n$, mediante:
+\begin{enumerate}
+	\item $0^n = 0$ para todo $n \in \mathbb{N}*$.
+	\item $a^0 = 1$ para todo $a \in \mathbb{N}*$.
+	\item $a^{n+1}=aa^n$ para todo $a \in \mathbb{N}*$ y $n \in \mathbb{N}$.
+\end{enumerate}
+
+\subsection{Ordenación de números naturales}
+
+Dados $m,n \in \mathbb{N}$ se define la relación \emph{menor o igual}, $\leq$, mediante:
+\[
+\exists p \in \mathbb{N}, m + p = n \Rightarrow m \leq n
+\]
+
+Se define \emph{estrictamente menor},$<$ como:
+\[
+m \leq n \wedge m \neq n \Rightarrow m < n
+\]
+
+Además, se obtiene la siguiente relación:
+\[
+m < n \Leftrightarrow m + 1 \leq n
+\]
+
+Las relaciones \emph{mayor o igual}, $\geq$, y \emph{estrictamente mayor}, $<$, se definen como:
+\begin{align*}
+m \geq n \Leftrightarrow n < m \\
+m < n \Leftrightarrow n \leq m
+\end{align*}
+
+La relación $\leq$ es una \emph{relación de orden} total en $\mathbb{N}$, compatible con la suma y producto de número naturales, es decir para todo $m,n,p \in \mathbb{N}$ se tiene:
+\[
+m \leq n \Rightarrow \begin{cases}
+m+p \leq n+p \\
+mp \leq np
+\end{cases}
+\]
+
+El intervalo abierto $(n, n+1)_{\mathbb{N}}$ es vacío, para todo $n \in \mathbb{N}$.
+
+El conjunto $\mathbb{N}$ con la relación $\leq$ es un conjunto bien ordenado.
+
+En $\mathbb{N}$, todo subconjunto no vacío y acotado superiormente, tiene máximo.
+
+\section{Conjuntos finitos}
+
+Un conjunto $A$ es \textbf{finito} si es vacío o si existe una biyección de $A$ sobre un listado cerrado $[1,n]_{\mathbb{N}}$, con $n \neq 0$. En caso contrario, se dice que el conjunto es \textbf{infinito}.
+
+Los intervalos cerrados tienen las siguientes propiedades:
+\begin{itemize}
+	\item Si $n,m \in \mathbb{N}$ y existe una aplicación inyectiva $f: [1,n]_{\mathbb{(N)}} \longrightarrow [1,m]_{\mathbb{(N)}}$ entonces $n \leq m$.
+	\item Si $n,m \in \mathbb{N}$ y existe un biyección $f: [1,n]_{\mathbb{(N)}} \longrightarrow [1,m]_{\mathbb{(N)}}$ entonces $n=m$.
+\end{itemize}
+
+Sea $A$ un conjunto finito no vacío. Existe un único número natural $n$, no nulo, tal que $A$ y $[1,n]_{\mathbb{N}}$ son equipotentes. Se dice entonces que $card(A)=n$.
+
+Si $n \in \mathbb{N}$ entonces toda aplicación inyectiva $f: [1,n]_{\mathbb{(N)}} \longrightarrow [1,n]_{\mathbb{(N)}}$ es biyectiva.
+
+Sea $A$ un subconjunto no vacío de $\mathbb{N}$. $A$ es un conjunto finito si y sólo si $A$ es un conjunto acotado superiormente.
+
+Esta propiedad presenta los siguientes corolarios:
+\begin{itemize}
+	\item $\mathbb{N}$ es un conjunto finito.
+	\item Todo subconjunto de un subconjunto finito de $\mathbb{N}$ es finito.
+	\item La unión de dos subconjuntos finitos de $\mathbb{N}$ es un subconjunto finito.
+	\item El complementario de un subconjunto finito de $\mathbb{N}$ es un conjunto infinito.
+\end{itemize}
+
+Sea $A$ un subconjunto de un conjunto finito de $B$ y $A \neq B$. Entonces $A$ es un conjunto finito y $card(A) < card(B)$.
+
+Sea $A$ un conjunto finito y $f$ una aplicación de $A$ en cualquier conjunto $B$. Entonces $f(A)$ es un conjunto finito y
+\[
+card(f(A)) \leq card(A)
+\]
+Además, $card(f(A)) = card(A)$ si y sólo si $f$ es inyectiva.
+
+Si $f$ es una aplicación sobreyectiva de un conjunto finito $A$ en un conjunto $B$, entonces:
+\[
+card(B) \leq card(A)
+\]
+Además, se tiene la igualdad $card(A)=card(B)$ si y sólo si $f$ es una aplicación biyectiva.
+
+Sean $A$ y $B$ dos conjuntos finitos de igual cardinal y sea una aplicación $f: A \longrightarrow B$. Son equivalentes:
+\begin{enumerate}
+	\item $f$ es inyectiva.
+	\item $f$ es biyectiva.
+	\item $f$ es sobreyectiva.
+\end{enumerate}
+
+Sean $A$ y $B$ dos conjuntos finitos disjuntos. Entonces $A \cup B$ es un conjunto finito y:
+\[
+card(A \cup B) = card(A) + card(B)
+\]
+
+Sean $A$ y $B$ dos conjuntos finitos. Entonces $A \cup B$ y $A \cap B$ son conjuntos finitos y
+\[
+card(A \cup B) + card(A \cap B) = card(A) + card(B)
+\]
+
+Sean $A$ y $B$ dos conjuntos finitos. Entonces, $A \times B$ es un conjunto finito y
+\[
+card(A \times B) = card(A) \cdot card(B)
+\]
+
+Sean $A$ y $B$ dos conjuntos finitos. Supongamos que $a = card(A) \neq 0$ y $b = card(B) \neq 0$. Entonces
+\[
+card(\mathcal{F}(A,B))=card(B^A)=b^a
+\]
+
+Sea $A$ un conjunto finito. Entonces
+\[
+card(\mathcal{P}(A))=2^{card(A)}
+\]
+
+Sea $A$ y $B$ dos conjuntos finitos cuyos cardinales son $card(A) = n \neq 0$ y $card(B) = m \neq 0$. Entonces el número de aplicación inyectivas de $A$ en $B$ es
+\[
+card(\mathcal{I}(A,B)))=m(m-1)\cdots(m-n+1)
+\]
+
+El número anterior se conoce como \textbf{variaciones de $m$ sobre $n$} $V_{m,n}$:
+\[
+V_{m,n} = m(m-1)\cdots(m-n+1) = \frac{m!}{(m-n)!}
+\]
+
+Sea $A$ y $B$ dos conjuntos finitos cuyos cardinales son $card(A) = card(B) = n$. Entonces el número de aplicaciones biyectivas de $A$ en $B$ es:
+\[
+card(\mathcal{B}(A,B))= n!
+\]
+
+Sea $A$ un conjunto finito tal que $card(A)=m$. Sea $0 \leq n \leq m$. El número de subconjuntos de $A$ que poseen exactamente $n$ elementos es
+\[
+\begin{pmatrix}
+m \\ n
+\end{pmatrix}=
+\frac{m!}{n!(m-n)!}
+\]
+Es número se lee $m sobre n$ y se denomina \textbf{coeficiente binomial}, \textbf{número combinatorio} o \textbf{combinaciones de m sobre en} $C_{m,n}$.
+
+\section{Conjuntos infinitos}
+
+Sea $A$ un conjunto cualquiera. Entonces el conjunto $\mathcal{P}(A)$ y el conjunto $A$ no son equipotentes.
+
+Un conjunto $A$ se considera \textbf{numerable} si es equipotente con $\mathbb{N}$. El cardinal de los conjuntos numerables se denota como \emph{aleph sub zero} $\aleph_0$.
+
+Sea $A$ un subconjunto de $\mathbb{N}$. Entonces $A$ es un conjunto finito o $A$ es un conjunto numerable. 
+
+El conjunto $\mathbb{N}^2=\mathbb{N} \times \mathbb{N}$ es numerable.
+
+Se satisfacen las siguientes propiedades:
+\begin{enumerate}
+	\item Todo subconjunto de un conjunto numerable es finito o numerable.
+	\item El producto de conjuntos numerables es numerable.
+	\item La unión de dos conjuntos numerables es numerables.
+	\item La unión numerable de conjuntos numerables es numerable.
+\end{enumerate}
+
+\section{Los números enteros}
+
+En $\mathbb{N} \times \mathbb{N}$ se define la relación de equivalencia $\mathcal{E}$:
+\[
+(a,b) \mathcal{E} (a',b') \Leftrightarrow a+b'=a'+b
+\]
+
+El \textbf{representante canónico del número entero $\alpha$} es el par $(m,n)$ donde al menos una de sus componentes es nula.
+
+\subsection{Operaciones en $\mathbb{Z}$}
+
+Sean $\alpha,\beta \in \mathbb{Z}$ y sean $(a,b),(c,d) \in \mathbb{N} \times \mathbb{N}$ sendos representantes. Se define:
+\begin{align*}
+\alpha + \beta &= (a+c,b+d) \\
+\alpha\beta &= (ac+bd,bc+ad)
+\end{align*}
+
+$\mathbb{Z}$ es una anillo conmutativo unitario.
+
+\begin{align*}
+&\alpha \cdot 0 = 0 \cdot \alpha = 0 \\
+&\alpha, \beta \in \mathbb{Z}, \alpha\beta=0 \Rightarrow \alpha = 0 \vee \beta = 0
+\end{align*}
+
+\subsection{Orden en $\mathbb{Z}$}
+
+Dados $\alpha,\beta \in \mathbb{Z}$:
+\[
+\alpha \leq \beta \Leftrightarrow \beta - \alpha \in \mathbb{Z}_+
+\]
+
+$(\mathbb{Z},+,\cdot,\leqslant)$ es un anillo totalmente ordenado.
+
+\subsection{Identificación de $\mathbb{N}$ con $\mathbb{Z}_+$}
+
+Todo subconjunto de $\mathbb{Z}$ no vacío y acotado
+\begin{enumerate}
+	\item superiormente tiene máximo.
+	\item inferiormente tiene mínimo.
+\end{enumerate}
+
+\subsubsection{Propiedad arquimediana de $\mathbb{Z}$}
+
+Dados $\alpha,\beta \in \mathbb{Z}$ si $\alpha > 0$ entonces existe $n \in \mathbb{N}$ tal que $n\alpha > \beta$.
+
+\section{Máximo común divisor y mínimo común múltiplo}
+
+\subsection{División entera}
+
+Sean $a,b \in \mathbb{Z}$ tales que $b > 0$. Existen $q,r \in \mathbb{Z}$ únicos tales que:
+\[
+a = qb + r \qquad y \qquad  0 \leq q < b
+\]
+
+Los números $q$ y $r$ de denominan respectivamente \textbf{cociente} y  \textbf{resto} de la división entera de $a$ entre $b$.
+
+Se considera la relación \emph{divide} en $\mathbb{Z}$, $b$ divide a $a$, definida por:
+\[
+b|a \Leftrightarrow \exists q \in \mathbb{Z}, a=qb
+\]

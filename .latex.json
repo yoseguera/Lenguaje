@@ -1,0 +1,11 @@
+{
+  "projectPath": "/home/yago/Dropbox/2-proyectos/Grado matemáticas/Lenguje matematico/Apuntes",
+  "title": "LaTeX-Plus Project",
+  "root": "lenguaje-matematico.tex",
+  "program": "pdflatex",
+  "latexmkOptions": "-bibtex -pdf -shell-escape",
+  "output": ".latex",
+  "openOutput": "true",
+  "postAction": "link",
+  "postPath": ""
+}

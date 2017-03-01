@@ -1,0 +1,60 @@
+\chapter{Los números racionales y los números reales}
+
+\section{Los números racionales}
+
+En el conjunto $\mathbb{Z} \times \mathbb{Z}^*$ se define la relación de equivalencia $\mathcal{E}$ mediante:
+\[
+(a,b) \mathcal{E} (a',b') \Leftrightarrow ab'=a'b
+\]
+
+Toda clase de equivalencia es por definición un \textbf{número raciona}l y el conjunto de todas las clases de equivalencia o conjunto conciente $\mathbb{Z} \times \mathbb{Z}^*/\mathcal{E}$ es el conjunto de números racionales y se denota $\mathbb{Q}$.
+
+Si $(a,b) \in \mathbb{Z}^* \times \mathbb{Z}^*$ y $d = mcd(|a|,|b|)$ entonces $a=da'$ y $b=db'$, siendo $mcd(|a'|,|b'|)=1$. Se denomina $(a',b')$ \textbf{representante canónico} o \textbf{fracción irreducible}. Se elige generalmente con $b \in \mathbb{N}^*$.
+
+\subsection{Operaciones en $\mathbb{Q}$}
+
+Sean $\alpha,\beta in \mathbb{Q}$ y sean $(a,b),(c,d) \in \mathbb{Z} \times \mathbb{Z}^*$ sus representantes. Se define:
+\begin{align*}
+\alpha + \beta &= [(ad+cb,bd)] = \frac{ad+cb}{bd} \\
+\alpha\beta &= [(ac,bd)] = \frac{ac}{bd}
+\end{align*}
+
+$(\mathbb{Q},+,\cdot)$es un cuerpo.
+
+\subsection{Orden en $\mathbb{Q}$}
+
+Dados $\alpha,\beta \in \mathbb{Q}$, se define la relación:
+\[
+\alpha \leq \beta \Leftrightarrow \beta - \alpha \in \mathbb{Q}_+
+\]
+
+Tiene las siguientes propiedades:
+\begin{itemize}
+	\item Reflexiva.
+	\item Antisimétrica.
+	\item Transitiva.
+	\item Es de orden total.
+	\item Es compatible con la suma.
+\end{itemize}
+
+$(\mathbb{Q},+,\cdot,\leq)$ es un cuerpo ordenado.
+
+\subsection{Propiedad arquimediana de $\mathbb{Q}$}
+
+Dados $\alpha,\beta \in \mathbb{Q}$ con $\alpha > 0 $, existe un $n \in \mathbb{N}$ tal que $n\alpha > \beta$.
+
+\subsection{Orden divisible}
+
+El orden de $\mathbb{Q}$ es \textbf{divisible}, es decir, para todo $\alpha,\beta \in \mathbb{Q}$ tales que $alpha < \beta$, existe $\gamma \in \mathbb{Q}$ tal que $\alpha < \gamma < \beta$.
+
+$\mathbb{Z}$ no tiene esta propiedad y  por eso se dice que el orden de $\mathbb{Z}$ es discreto.
+
+\subsection{Los números decimales}
+
+Un número racional forma parte del conjunto $\mathbb{D}$ de los números decimales si y sólo si el denominador de su fracción irreducible es de la forma $2^n5^p$ con $n,p \in \mathbb{N}$.
+
+Para todo $n \in \mathbb{N}$, existe un único $c \in \mathbb{N}$ que cumple
+\[
+\frac{c}{10^n} \leq \frac{a}{b} < \frac{c+1}{10^n}
+\]
+Siendo $c$ el cociente de dividir $a10^n$ por $b$.

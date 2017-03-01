@@ -1,0 +1,201 @@
+\chapter{Conjuntos}
+
+\section{Algunas ideas sobre conjuntos. Predicados}
+
+Un conjunto $C$ está bien definido cuando se tiene un criterio que permite decidir si un determinado elemento $b$ pertenece al conjunto $C$ o no pertenece al conjunto $C$.
+
+Un objeto no puede ser a la vez un conjunto y un elemento de ese conjunto. Este decir, la proposición $b \in b$ es falsa.
+
+La colección de todos los conjuntos posibles no forman un conjunto.
+
+\subsection{Igualdad de conjuntos}
+
+Se dice que dos conjuntos $A$ y $B$ son iguales, y se escribe $A=B$, si y sólo si tiene los mismo elementos.
+
+Cuando un conjunto se determina mediante una lista de todos sus elementos se dice que está \textbf{definido por extensión}.
+
+\subsection{Inclusión de conjuntos}
+
+\[
+A \subset B \Leftrightarrow x \in A \wedge x \in B
+\]
+
+\[
+A = B \Leftrightarrow A \subset B \wedge B \subset A
+\]
+
+$A$ y $\emptyset$ son \textbf{subconjuntos impropios} de $A$.
+
+\subsection{Predicados}
+
+\[
+C_P = \{ x \in C | P_x \}
+\]
+
+$P_x$ es un predicado que indica si el elemento x forma parte del conjunto o no. Los conjuntos así definidos se dice que está \textbf{definido por inclusión}.
+
+Al conjunto $C$ se le conoce como \textbf{universo de predicado}.
+
+Dos predicados son \textbf{equivalentes} sobre un universo $C$ si definen el mismo subconjunto de $C$.
+
+\subsection{Conjunto vacío}
+
+\[
+\emptyset = \{ x \in C | x \notin C \}
+\]
+
+No tiene ningún elemento y es subconjunto de cualquier conjunto.
+
+\subsection{Principio de inducción}
+
+Si un predicado $P$ se define sobre $\mathbb{N}$ tal que:
+\begin{enumerate}
+	\item $0$ satisface la propiedad $P$. Es decir, $P_x$ es verdadero.
+	\item Si $n$ satisface la propiedad $P$ entonces el sucesor de $n$ satisface también la propiedad $P$.
+\end{enumerate}
+
+\subsection{Cuantificadores}
+
+\begin{align*}
+\neg (\forall x P_x) \Leftrightarrow \exists x \neg P_x \\
+\neg (\exists x P_x) \Leftrightarrow \forall x \neg P_x
+\end{align*}
+
+\subsection{Complementario y partes de un conjunto}
+
+\subsection{Complementario}
+
+\[
+\overline{A} = \{x \in U | x \notin A\} = \{x \in U | \neg P_x\}
+\]
+\[
+A \subset B \Rightarrow \overline{B} \subset \overline{A}
+\]
+
+\subsection{Partes de un conjunto}
+
+\[
+\mathcal{P}(A) = \{ B | B \subset A \}
+\]
+\[
+card(\mathcal{P}(A))=2^{card(A)}
+\]
+
+\section{Operaciones con conjuntos}
+
+\subsection{Unión}
+
+\[
+A \cup B = \{x | x \in A \vee x \in B\}
+\]
+
+\subsection{Intersección}
+
+\[
+A \cap B = \{x | x \in A \wedge x \in B\}
+\]
+
+\subsection{Familia de conjuntos}
+
+Si tenemos en cuenta un \textbf{conjunto de indices} no vacío $I$. A cada $i \in I$ le asociamos un conjunto $F_i$. La colección de todos esos conjuntos se denomina \textbf{familia de conjuntos} y se denota:
+\[
+F = \{F_i | i \in I\}
+\]
+
+Cuando todos los $F_i$ son subconjuntos de un mismo conjunto $U$ entonces $F$ es un subconjunto de $P(U)$. Cualquier subconjunto $G$ no vacío de $P(U)$ es una familia de conjuntos.
+
+La unión e intersección se generaliza a familias arbitrarias:
+\begin{align*}
+\bigcup_{i \in I} = \{x | \exists i \in I, x \exists F_i \} \\
+\bigcap_{i \in I} = \{x | \forall i \in I, x \exists F_i \}
+\end{align*}
+
+Si la familia viene dada por $\emptyset  \neq G \subset P(U)$:
+\begin{align*}
+\bigcup_{F \in G} = \{x | \exists F \in G, x \exists F_i \} \\
+\bigcap_{F \in G} = \{x | \forall F \in G, x \exists F_i \}
+\end{align*}
+
+\subsection{Diferencia de conjuntos}
+
+\begin{align*}
+A \bslash B = \{x | x \in A \wedge x \notin B \} = A \cap \overline{B} 
+\end{align*}
+
+
+La diferencia de conjuntos es distributiva:
+\begin{align*}
+A \bslash (B \cap C) &= (A\bslash B) \cap (A \bslash C) \\
+A \bslash (B \cup C) &= (A\bslash B) \cup (A \bslash C) 
+\end{align*}
+
+\subsection{Diferencia simétrica}
+
+\begin{align*}
+A \triangle B = & (A \cup B) \bslash{} (A \cap B) = 
+\\ & (A \bslash \overline{B}) \cup (\overline{A} \bslash B) = 
+\\ & \{ x | x \in A \wedge x \notin B\} \cup \{ x | x \notin A \wedge x \in B\}
+\end{align*}
+
+\section{Producto de conjuntos}
+
+Dado $n$ conjuntos $A_1,A_2,\ldots,A_n$ se denomina producto de $A_1$, por $A_2$, por \ldots, por $A_n$ al conjunto:
+
+\[
+A_1 \times A_2 \times \cdots \times A_n = \{(x_1,x_2,\ldots,x_n)|x_1 \in A_1, x_2 \in A_2,\ldots,x_n \in A_n\}
+\]
+
+Es distributivo:
+\begin{align*}
+A \times (B \cap C) &= (A \times B) \cap (A \times C) \\
+(B \cap C) \times A &= (B \times A) \cap (C \times A) \\
+A \times (B \cup C) &= (A \times B) \cup (A \times C) \\
+(B \cup C) \times A &= (B \times A) \cup (C \times A) \\
+\end{align*}
+
+\section{Relaciones entre conjuntos}
+
+Dados los conjuntos $A$ y $B$, todo subconjunto $R \subset A \times B$ es una relación del conjunto $A$ al conjunto $B$, relación entre $A$ y $B$ o correspondencia entre $A$ y $B$.
+
+\[
+R: A \longrightarrow B \\
+\]
+
+Otra notación posible es:
+\[
+xRy \Leftrightarrow (x,y) \in R \subset A \times B
+\]
+
+$A$ es el conjunto inicial, y $B$ el conjunto final.
+
+\subsection{Conjunto original de la relación $R$}
+
+\[
+R^{-1}(B)=\{x \in A | \exists y \in B, xRy\}
+\]
+
+\subsection{Conjunto final de la relación $R$}
+
+\[
+R(A)=\{y \in B | \exists x \in A, xRy\}
+\]
+
+\subsection{Conjunto imagen de $x \in A$}
+
+\[
+R(x)=\{y \in B | (x,y) \in R\} = \{y \in B | xRy\}
+\]
+
+\subsection{Conjunto original de $y \in B$}
+
+\[
+R^{-1}(y)=\{x \in A | (x,y) \in R\} = \{x \in A | xRy\}
+\]
+
+\subsection{Composición de relaciones}
+
+Dadas las relaciones $R$ entre los conjuntos $A$ y $B$, y la relación $S$ entre los conjuntos $B$ y $C$, se define una relación entre los conjuntos $A$ y $C$ conocida como \textbf{composición de las relaciones $R$ y $S$} o relación composición:
+\[
+S \circ R = \{(x,z) \in A \times C | \exists y \in B, xRy \wedge ySz\}
+\]
+

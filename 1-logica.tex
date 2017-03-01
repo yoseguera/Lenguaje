@@ -1,0 +1,248 @@
+\chapter{Nociones de lógica}
+
+\section{Conectores lógicos básicos}
+
+\subsection{Negación}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    $p$ & $\neg p$ \\
+    \hline
+    0 & 1 \\
+    1 & 0 \\
+    \hline
+  \end{tabular}
+  \caption{Negación}
+\end{table}
+
+\subsection{Disyunción}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|l|l|l|}
+    \hline
+    $p$ & $q$ & $p \vee q$ \\
+    \hline
+    0 & 0 & 0\\
+    0 & 1 & 1\\
+    1 & 0 & 1\\
+    1 & 1 & 1\\
+    \hline
+  \end{tabular}
+  \caption{Disyunción}
+\end{table}
+
+\subsection{Conjunción}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|l|l|l|}
+    \hline
+    $p$ & $q$ & $p \wedge q$ \\
+    \hline
+    0 & 0 & 0\\
+    0 & 1 & 0\\
+    1 & 0 & 0\\
+    1 & 1 & 1\\
+    \hline
+  \end{tabular}
+  \caption{Conjunción}
+\end{table}
+
+\subsection{Condicional}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|l|l|l|}
+    \hline
+    $p$ & $q$ & $p \rightarrow q$ \\
+    \hline
+    0 & 0 & 1\\
+    0 & 1 & 1\\
+    1 & 0 & 0\\
+    1 & 1 & 1\\
+    \hline
+  \end{tabular}
+  \caption{Disyunción}
+\end{table}
+
+A la proposicional condicional se le asocian 3 nuevas proposiciones:
+\begin{description}
+ \item[Condiconal recíproco] $q \rightarrow p$.
+ \item[Condiconal contrario] $\neg p \rightarrow \neg q$.
+ \item[Condiconal contrarrecíproco] $\neg q \rightarrow \neg p$.
+\end{description}
+
+\subsection{Bicondicional}
+
+\begin{table}[htbp]
+  \centering
+  \begin{tabular}{|l|l|l|}
+    \hline
+    $p$ & $q$ & $p \leftrightarrow q$ \\
+    \hline
+    0 & 0 & 1\\
+    0 & 1 & 0\\
+    1 & 0 & 0\\
+    1 & 1 & 1\\
+    \hline
+  \end{tabular}
+  \caption{Disyunción}
+\end{table}
+
+\section{Construcción de nuevas propociones}
+
+\begin{description}
+ \item[Contradicción] Proposición que solo toma el valor 0, se denota como 
+\textbf{0}.
+ \item[Tautología] Proposición que solo toma el valor 1, se denota como 
+\textbf{1}.
+\end{description}
+
+\section{Leyes lógicas}
+
+\subsection{Leyes lógicas con una proposición}
+
+\subsection{Doble negación}
+
+\[
+ \neg \neg p \Leftrightarrow p
+\]
+
+
+\subsection{Simplificación}
+
+\begin{enumerate}
+ \item $p \vee p \Leftrightarrow p$
+ \item $p \wedge p \Leftrightarrow p$
+ \item $p \rightarrow p \Leftrightarrow p$
+ \item $p \leftrightarrow p \Leftrightarrow p$
+\end{enumerate}
+
+\subsection{Tercio exclusivo}
+
+\[
+ p \vee \neg p \Leftrightarrow \textbf{1}
+\]
+
+\subsection{Contradicción}
+
+\[
+ p \wedge \neg p \Leftrightarrow \textbf{0}
+\]
+
+\subsection{Leyes lógicas equivalentes con dos proposiciones}
+
+\subsection{Identidad}
+
+\begin{enumerate}
+ \item $p \vee 0 \Leftrightarrow p$ y $p \vee 1 \Leftrightarrow 1$.
+ \item $p \wedge 1 \Leftrightarrow p$ y $p \wedge 0 \Leftrightarrow 0$.
+ \item $1 \rightarrow p \Leftrightarrow p$.
+\end{enumerate}
+
+\subsection{De Morgan}
+
+\begin{enumerate}
+ \item $\neg (p \vee q) \Leftrightarrow \neg p \wedge \neg q$.
+ \item $\neg (p \wedge q) \Leftrightarrow \neg p \vee \neg q$.
+\end{enumerate}
+
+\subsection{Del condicional}
+
+\begin{enumerate}
+ \item $p \rightarrow q \Leftrightarrow \neg p \vee q$.
+ \item $p \rightarrow q \Leftrightarrow \neg (p \wedge \neg q)$.
+ \item $p \rightarrow q \Leftrightarrow p \rightarrow (p \wedge q)$.
+ \item $p \rightarrow q \Leftrightarrow q \rightarrow (p \vee q)$.
+\end{enumerate}
+
+\subsection{Del bicondicional}
+
+\[
+ p \leftrightarrow q \Leftrightarrow (p \rightarrow q) \wedge (q \rightarrow p)
+\]
+
+\subsection{Reducción al absurdo}
+
+\[
+ \neg p \rightarrow (q \wedge \neg q) \Leftrightarrow p
+\]
+
+\subsection{Transposición}
+
+\begin{enumerate}
+ \item $p \rightarrow q \Leftrightarrow \neg q \rightarrow \neg p$.
+ \item $p \leftrightarrow q \Leftrightarrow \neg p \leftrightarrow \neg q$.
+\end{enumerate}
+
+\subsection{Leyes lógicas equivalentes con tres proposiciones}
+
+\subsection{Asociativas}
+
+\begin{enumerate}
+ \item $p \vee (q \vee r) \Leftrightarrow (p \vee q) \vee r$.
+ \item $p \wedge (q \wedge r) \Leftrightarrow (p \wedge q) \wedge r$.
+ \item $p \leftrightarrow (q \leftrightarrow r) \Leftrightarrow (p 
+\leftrightarrow q) \leftrightarrow r$.
+ \item $p \rightarrow (q \vee r) \Leftrightarrow (p \rightarrow q) \vee (p 
+\rightarrow q)$.
+ \item $p \rightarrow (q \wedge r) \Leftrightarrow (p \rightarrow q) \wedge (p 
+\rightarrow q)$.
+\end{enumerate}
+
+\subsection{Distributivas}
+
+\begin{enumerate}
+\item $p \wedge (q \vee r) \Leftrightarrow (p \wedge q) \vee (p 
+\wedge q)$.
+\item $p \vee (q \wedge r) \Leftrightarrow (p \vee q) \wedge (p 
+\vee q)$.
+ \item $p \rightarrow (q \vee r) \Leftrightarrow (p \rightarrow q) \vee (p 
+\rightarrow q)$.
+ \item $p \rightarrow (q \wedge r) \Leftrightarrow (p \rightarrow q) \wedge (p 
+\rightarrow q)$.
+\end{enumerate}
+
+\subsection{Leyes lógicas condicionales}
+
+\subsection{Simplificación condicional}
+
+\begin{enumerate}
+ \item $p \wedge q \Rightarrow p$.
+ \item $p \Rightarrow p \vee q$
+\end{enumerate}
+
+\subsection{Inferencia}
+
+\begin{enumerate}
+ \item $\neg p \wedge(p \vee q) \Rightarrow q$.
+ \item $p \wedge (\neg p \vee \neg q) \Rightarrow \neg q$.
+\end{enumerate}
+
+\subsection{Ponendo ponens}
+
+\[
+ (p \rightarrow q) \wedge p \Rightarrow q
+\]
+
+\subsection{Tollendo tollens}
+
+\[
+ (p \rightarrow q) \wedge \neg q \Rightarrow \neg p
+\]
+
+
+\subsection{Validación de proposiciones}
+
+La validación de las proposiciones se puede realizar mediante:
+\begin{itemize}
+ \item Construcción de la tabla de verdad.
+ \item Refutación: Se aplica reducción al absurdo.
+\end{itemize}
+
+\section{Forma clausulada}
+
+Proposición formada por la conjunción ($\wedge$) de disyunciones ($\vee$).

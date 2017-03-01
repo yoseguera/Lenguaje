@@ -1,0 +1,274 @@
+\chapter{Operaciones internas y estructuras algebraicas}
+
+\section{Operaciones internas}
+
+Sea $E$ un conjunto. Una \textbf{operación interna}, o \textbf{ley de composición interna}, en $E$ es una aplicación de $E \times E$ en $E$. Es decir, es una ley que asocia a todo par $(a,b)$ de elemento de $E$ un elemento único de $E$, que notaremos, $a \star b$.
+
+\subsection{Propiedades}
+
+Sea $E$ un conjunto y $\star$ una operación interna definida en $E$:
+
+\begin{description}
+\item[Asociativa]
+\[
+\forall a,b,c \in E; a \star (b \star c) = (a \star b) \star c
+\]
+\item[Conmutativa] 
+\[
+\forall a,b \in E; a \star b = b \star a
+\]
+Los elementos que cumplen esta propiedad se llaman \textbf{conmutables}.
+\item[Elemento neutro] 
+\[
+\exists e \in E,\forall a \in E; a \star e = e \star a = a
+\]
+Si existe elemento neutro de $\star$ en $E$ este es único.
+\item[Elemento simétrico] del elemento $a \in E$ a un elemento $a' \in E$ tal que $a \star a' = a' \star a = e$.
+
+Sea $\star$ una operación asociativa interna en $E$ con elemento neutro $e \in E$. Si $a \in E$ tiene elemento simétrico, este es único.
+\end{description}
+
+\section{Grupos}
+
+Sean $G$ un conjunto y $\star$ una \textbf{operación interna} en $G$. Se dice que el par $(G,\star)$ tiene estructura de grupo, o que $(G,\star)$ es un \textbf{grupo}, si se satisfacen las siguientes propiedades:
+\begin{enumerate}
+\item $\star$ es \textbf{asociativa}.
+\item Existe \textbf{elemento neutro} de $\star$ en $G$.
+\item Para todo elemento $a \in G$, existe en $G$ el \textbf{elemento simétrico} de $a$ respecto de $\star$.
+\end{enumerate}
+
+Si ademas la operación $\star$ es conmutativa se dice que el grupo es \textbf{conmutativo} o \textbf{abeliano}.
+
+\subsection{Propiedades de un grupo}
+
+Sea $(G,\star)$ un grupo. Se tiene:
+\begin{enumerate}
+\item $\forall a,b \in G, a \star b = a \star c \Rightarrow b = c$ (Propiedad cancelativa).
+\item Para todo $a,b \in G$, existe un único $x \in G$, tal que $a \star x = b$.
+\item Si $a^{-1}$ y $b^{-1}$ son los simétricos de $a$ y $b$ respectivamente, entonces ${(a \star b)}^{-1} = b^{-1} \star a^{-1}$.
+\end{enumerate}
+
+\subsection{Subgrupos}
+
+Dados $(G,\star)$ y $H \subset G$, se dice que $H$ es un subgrupo de $G$ si $(H,\star)$ tiene a su vez estructura de grupo. En particular, el subconjunto $\{e\}$ y el propio $G$ son subgrupos de $G$.
+
+Sean un grupo $(G,\star)$ y $H$ un subconjunto no vacío de $G$, $(H,\star)$ es un subgrupo de $G$ si y sólo si $\forall a,b \in H, a \star b^{-1} \in H$.
+
+\subsection{Congruencia modulo}
+
+Sea $(G,\star)$ un \textbf{grupo abeliano} y sea $(H,\star)$ un subgrupo. La relación $\mathcal{R}_H$ en $G$ definida:
+\[
+\forall a,b \in G, a \mathcal{R}_H b \Leftrightarrow a \star b^{-1} \in H
+\]
+es una relación de equivalencia, que se denomina \textbf{congruencia modulo H}.
+
+Las clases de equivalencia generadas son equipotentes en $G$. Y si $G$ es finito $card([a])|card(G)$.
+
+\section{Anillos}
+
+Sea $A$ un conjunto y sean $+$ y $\cdot$ dos operaciones internas definidas en $A$. Diremos que $(A,+,\cdot)$ es un \textbf{anillo} si se satisface:
+\begin{enumerate}
+\item $(A,+)$ es un grupo conmutativo.
+\item La operación $\cdot$ es asociativa.
+\item La operación $\cdot$ es distributiva respecto de la operación $+$, esto es,
+\begin{align*}
+a(b+c)=ab+ac \\ (b+c)a=ba+ca
+\end{align*}
+\end{enumerate}
+
+Si además la operación $\cdot$ es conmutativa, se dice que $(A,+,\cdot)$ es una \textbf{anillo conmutativo}.
+
+Si $(A,+,\cdot)$  tiene elemento neutro para $\cdot$, siendo este distinto del elemento neutro de $\star$, se dice que $(A,+,\cdot)$  es una \textbf{anillo unitario}.
+
+\subsection{Propiedades de un anillo}
+
+Sea $(A,+,\cdot)$ un anillo. Se tiene:
+\begin{enumerate}
+\item $\forall a \in A, A \cdot 0 = 0 \cdot A = 0$, se dice que $0$ es absorbente para el producto.
+\item $\forall a,b \in A, (-a)b=a(-b)=-(ab)$ y $(-a)(-b)=ab$.
+\item Si además el $(A,+,\cdot)$ es una anillo conmutativo se satisfacen las siguientes igualdades:
+\begin{align*}
+{(a+b)}^2&=a^2+b^2+2ab \\
+(a+b)(a-b) &= a^2-b^2 \\
+{(a+b)}^n&=\sum_{i=0}^n \begin{pmatrix}
+n \\ i
+\end{pmatrix} a^{n-i}b^i
+\end{align*}
+\end{enumerate}
+
+\subsection{Divisores de cero}
+
+En un anillo $(A,+,\cdot)$ se dice que el elemento $a \in A, a \neq 0$, es un divisor de cero si existe $b \in A, b \neq 0$, tal que $ab=0$. Un anillo que no tenga divisores de cero se llama \textbf{anillo integro}.
+
+\subsection{Subanillos. Ideales}
+
+Sea $(A,+,\cdot)$ un anillo y $H$ un subconjunto no vació de $G$. Se dice que $H$ es un \textbf{subanillo} de A si $(H,+,\cdot)$ es a su vez una anillo. Los subconjuntos $\{1\}$ y el propio $A$ son subanillos de $A$.
+
+Sean $(A,+,\cdot)$ un anillo y $H$ un subconjunto no vacío de $A$. $H$ es un \textbf{subanillo} de $A$ si y sólo si $\forall a,b \in H$ se cumple:
+\begin{enumerate}
+\item $a-b \in H$.
+\item $ab \in H$.
+\end{enumerate}
+
+Sean $(A,+,\cdot)$ un \textbf{anillo conmutativo} e $I$ un subconjunto no vacío de $A$. Se dice que $I$ es un \textbf{ideal} de $A$ si cumple:
+\begin{enumerate}
+\item $a-b \in I, \forall a,b \in I$.
+\item $ac \in I, \forall a \in I, \forall c \in A$.
+\end{enumerate}
+
+Si $(A,+,\cdot)$ un \textbf{anillo conmutativo} y $a \in A$ es un elemento fijo, el conjunto
+\[
+aA = (a) = \{ak | k \in A\}
+\]
+es un ideal de $A$ que se denomina \textbf{ideal principal} generado por $a$.
+
+\section{Cuerpos}
+
+Sea $\mathbb{K}$ un conjunto y seán $+$ y $\cdot$ dos operaciones internas definidas en $\mathbb{K}$. $(\mathbb{K},+,\cdot)$ es un \textbf{cuerpo} si se satisfacen las siguientes propiedades:
+\begin{enumerate}
+  \item Las operaciones $+$ y $\cdot$ son asociativas en $\mathbb{K}$.
+  \item Las operaciones $+$ y $\cdot$ son conmutativas en $\mathbb{K}$.
+  \item La operación $\cdot$ es distributiva respecto la operación $+$ en $\mathbb{K}$.
+  \item Existen dos elementos distintos en $\mathbb{K}$ que se designan por $0,1$ que son elementos neutros de la suma y del producto respectivamente.
+  \item Existencia de opuesto: para todo $a$ en $\mathbb{K}$ existe el simétrico de $a$ respecto de la suma que se designa por $-a$.
+  \item Existencia de inverso: para todo elemento $a \neq 0$ de $\mathbb{K}$ existe el simétrico de $a$ para el producto que se designa por $a^{-1}$.
+\end{enumerate}
+O lo que es lo mismo:
+\begin{enumerate}
+  \item $(\mathbb{K},+)$ es un grupo conmutativo.
+  \item $(\mathbb{K},\cdot)$ es un grupo conmutativo.
+  \item La operación $\cdot$ es distributiva respecto de la operación $+$ en $\mathbb{K}$.
+\end{enumerate}
+
+Un cuerpo no tiene divisores de cero, es decir, es un anillo integro.
+
+\subsection{Subcuerpos}
+
+Sea $(\mathbb{K},+,\cdot)$ un cuerpo y sea $H$ un subconjunto no vacío de $\mathbb{K}$ donde consideramos las restricciones de las operaciones en $\mathbb{K}$. Se dice que $H$ es un \textbf{subcuerpo} de $\mathbb{K}$ si $(H,+,\cdot)$ es su vez un cuerpo.
+
+Sea $(\mathbb{K},+,\cdot)$ un cuerpo y sea $H$ un subconjunto con al menos dos elementos distintos. $H$ es un subcuerpo de $\mathbb{K}$ si y sólo si se cumple:
+\begin{enumerate}
+  \item $a-b \in H$ para todo $a,b \in H$.
+  \item $ab^{-1} \in H$ para todo $a,b \in H^*=H\backslash \{0\}$.
+\end{enumerate}
+
+\section{Orden y operaciones}
+
+\subsection{Grupo ordenado}
+
+Sea una una relación de orden $\preceq$ definida sobre un grupo conmutativo $(G,+)$, se dice que $(G,+,\preceq)$ es un \textbf{grupo ordenado} si la relación de orden es compatible con la suma, es decir:
+\[
+\forall a,b,c \in G, a \preceq b \Rightarrow a+c \preceq b+c
+\]
+
+En un grupo ordenado $(G,+,\preceq)$ se satisfacen las siguientes propiedades:
+\begin{enumerate}
+  \item $a \preceq b \Leftrightarrow b+(-a) \in G_+$.
+  \item $a \preceq b \wedge a' \preceq b' \Rightarrow a+a' \preceq b+b'$.
+  \item $a \preceq b \Rightarrow -b \preceq -a$.
+\end{enumerate}
+
+\subsection{Anillo ordenado}
+
+Sea una una relación de orden $\preceq$ definida sobre un grupo conmutativo $(A,+,\cdot)$, se dice que $(A,+,\cdot,\preceq)$ es un \textbf{anillo ordenado} si se cumple:
+\begin{enumerate}
+  \item $\forall a,b,c \in A, a \preceq b \Rightarrow a+c \preceq b+c$.
+  \item $\forall a,b \in A, 0 \preceq a \wedge 0 \preceq b \Rightarrow 0 \preceq ab$.
+\end{enumerate}
+
+Si la relación de orden es total, se dice que el anillo es una \textbf{anillo totalmente ordenado}. Si además, es un cuerpo hablaremos de \textbf{cuerpo ordenado}.
+
+En un anillo totalmente ordenado se define el \textbf{valor absoluto} de $a \in A$ mediante:
+\[
+|a|=\begin{cases}
+a &si \quad 0 \preceq a \\
+-a & si \quad a \prec a
+\end{cases}
+\]
+
+En un anillo totalmente ordenado $(A,+,\cdot,\preceq)$ se satisfacen las siguientes propiedades:
+\begin{enumerate}
+	\item $a \preceq b \Leftrightarrow b-a \in A$.
+	\item $a \preceq b \wedge a' \preceq b' \Rightarrow a+a' \preceq b+b'$.
+	\item $a \preceq b \Rightarrow -b \preceq -a$.
+	\item $a \preceq b \wedge 0 \preceq c \Rightarrow ac \preceq bc$.
+	\item $a \preceq b \wedge c \preceq 0 \Rightarrow bc \preceq ac$.
+	\item $\forall a \in A, 0 \preceq a^2$.
+	\item Si $A$ es un anillo unitario entonces $0 \prec 1$.
+	\item $|a| \succeq 0, \forall a \in A$ y $|a| = 0 \Leftrightarrow a=0$.
+	\item $|ab|=|a||b|, \forall a,b \in A$.
+	\item $|a+b| \preceq |a|+|b|, \forall a,b \in A$.
+\end{enumerate}
+
+Si además $(A,+,\cdot)$ es un cuerpo también se cumple:
+\begin{enumerate}
+	\item $a \succ 0 \Rightarrow a^{-1} \succ 0$.
+	\item $0 \prec a \preceq b \Rightarrow b^{-1} \preceq a^{-1}$.
+	\item $a \preceq b \prec 0 \Rightarrow b^{-1} \preceq a^{-1}$.
+\end{enumerate}
+
+\section{Homomorfismos}
+
+Sean $G$ y $G'$ dos conjuntos donde se tiene respectivamente definida una operación interna $+$. Sea $f: G \longrightarrow G'$ una aplicación. Se dice que $f$ es un \textbf{homomorfismo} si se cumple que:
+\[
+\forall a,b \in G, f(a+b) = f(a) + f(b)
+\]
+
+Si $G=G'$ se denomina \textbf{endomorfismo}. Si el homomorfismo es biyectivo hablaremos de \textbf{isomorfismo} y todo endomorfismo biyectivo se denomina \textbf{automorfismo}.
+
+\subsection{Propiedades de un homomorfismo}
+
+\begin{enumerate}
+	\item Si $f: G \longrightarrow G'$ es un homomorfismo entonces la operación de $G'$ es una operación interna cuando se restringe al conjunto imagen $f(G)$.
+	\item Si $f: G \longrightarrow G'$ y $g: G' \longrightarrow G''$ son homomorfismo entonces la composición $g \circ f: G \longrightarrow G'$ es un homomorfismo.
+	\item Si $f: G \longrightarrow G'$ es un isomorfismo entonces la aplicación inversa $f^{-1}: G' \longrightarrow G$ es un isomorfismo.
+\end{enumerate}
+
+La existencia de un isomorfismo entre dos conjuntos define una relación de equivalencia, ya que es reflexiva, simétrica y transitiva.
+
+\subsection{Homomorfismo de grupo}
+
+Sean $(G,+)$ y $(G',+)$ dos grupos tales que sus elementos neutros son respectivamente $0_G$ y $0_{G'}$, y $-a$ y $-a'$ los elementos simétricos de $a \in G$ y $a' \in G'$. Sea $f: G \longrightarrow G'$. Se tiene:
+\begin{enumerate}
+	\item $f(0_G)=0_{G'}$.
+	\item $f(-a)=-f(a), \forall a \in G$.
+	\item Si $H$ es un subgrupo de $G$ entonces,
+	\[
+	f(H)=\{a' \in G'| \exists a \in H, f(a)=a'\}
+	\]
+	es un subgrupo de $G'$.
+	\item Si $H'$ es un subgrupo de $G'$ entonces,
+	\[
+	f^{-1}(H')=\{a \in G| a \in G, f(a) \in H'\}
+	\]
+	es un subgrupo de $G$.
+\end{enumerate}
+
+Sean $(G,+)$ y $(G',+)$ dos grupos y $f: G \longrightarrow G'$ es un homomorfismo. Se tiene:
+\begin{enumerate}
+	\item $Im f$ es un subgrupo de $G'$.
+	\item $Ker f$ es un subgrupo de $G$.
+	\item $f$ es inyectivo si y sólo si $Ker f = \{0_G\}$.
+	\item $f$ es sobreyectivo si y sólo si $Im f = G'$
+\end{enumerate}
+
+\subsection{Homomorfismo de anillos y cuerpos}
+
+Si $(A,+,\cdot)$ y $(A',+,\cdot)$ son dos anillos, un \textbf{homomorfismo de anillos} es una aplicación $f: A \longrightarrow A'$ tal que para todo $a,b \in A$ se cumple:
+\begin{enumerate}
+	\item $f(a+b)=f(a)+f(b)$.
+	\item $f(ab)=f(a)f(b)$.
+\end{enumerate}
+
+Para la $+$ se cumplen las todas propiedades del homomorfismo de grupo, y para $\cdot$ las propiedades de homomorfismo.
+
+Si Si $(A,+,\cdot)$ y $(A',+,\cdot)$ son cuerpos estaríamos ante un \textbf{homomorfismo de cuerpos}.
+
+\subsection{Homomorfismo de conjuntos ordenados}
+
+Si tenemos dos conjuntos ordenados $(U,\preceq)$ y $(V,\preccurlyeq)$ una aplicación $f: U \longrightarrow V$ se denomina \textbf{homomorfismo de estructuras ordenadas} si es creciente, es decir:
+\[
+\forall a,b \in U, a \preceq b \Rightarrow f(a) \preceq f(b)
+\]
+
+Si $f$ es biyectiva estaremos ante un \textbf{isomorfirmos de estructuras ordenadas}.
