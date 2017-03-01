@@ -107,35 +107,37 @@ Cuando todos los $F_i$ son subconjuntos de un mismo conjunto $U$ entonces $F$ es
 La unión e intersección se generaliza a familias arbitrarias:
 \begin{align*}
 \bigcup_{i \in I} = \{x | \exists i \in I, x \exists F_i \} \\
-\bigcap_{i \in I} = \{x | \forall i \in I, x \exists F_i \}
+\bigcap_{i \in I} = \{x | \forall i \in I, x \exists F_i \} \\
 \end{align*}
 
 Si la familia viene dada por $\emptyset  \neq G \subset P(U)$:
 \begin{align*}
 \bigcup_{F \in G} = \{x | \exists F \in G, x \exists F_i \} \\
-\bigcap_{F \in G} = \{x | \forall F \in G, x \exists F_i \}
+\bigcap_{F \in G} = \{x | \forall F \in G, x \exists F_i \} \\
 \end{align*}
 
 \subsection{Diferencia de conjuntos}
 
 \begin{align*}
-A \bslash B = \{x | x \in A \wedge x \notin B \} = A \cap \overline{B} 
+A \setminus   B = \{x | x \in A \wedge x \notin B \} = A \cap \overline{B} 
 \end{align*}
 
 
 La diferencia de conjuntos es distributiva:
 \begin{align*}
-A \bslash (B \cap C) &= (A\bslash B) \cap (A \bslash C) \\
-A \bslash (B \cup C) &= (A\bslash B) \cup (A \bslash C) 
+A \setminus  (B \cap C) &= (A \setminus  B) \cap (A \setminus C) \\
+A \setminus  (B \cup C) &= (A \setminus B) \cup (A \setminus C) 
 \end{align*}
 
 \subsection{Diferencia simétrica}
 
 \begin{align*}
-A \triangle B = & (A \cup B) \bslash{} (A \cap B) = 
-\\ & (A \bslash \overline{B}) \cup (\overline{A} \bslash B) = 
-\\ & \{ x | x \in A \wedge x \notin B\} \cup \{ x | x \notin A \wedge x \in B\}
+A \triangle B = & (A \cup B) \setminus{} (A \cap B) = \\ 
+& (A \setminus  \overline{B}) \cup (\overline{A} \setminus  B) = \\ 
+& \{ x | x \in A \wedge x \notin B\} \cup \{ x | x \notin A \wedge x \in B\}
 \end{align*}
+
+
 
 \section{Producto de conjuntos}
 
